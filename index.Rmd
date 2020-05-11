@@ -24,21 +24,43 @@ text-align: justify}
 ## Introduction 
 
 ```{r include=FALSE}
+library(ggplot2)
 library(plotly)
 library(htmltools)
 ```
 
 ```{r include = FALSE}
-sunburst <- plot_ly(
-  labels = c("A", "B", "C", "D", "E","F", "G", "H", "I"),
-  parents = c("", "A", "A", "B", "B", "A", "A", "C", "A"),
-  values = c(10, 14, 12, 10, 2, 6, 6, 4, 4),
-  type = 'sunburst'
+
+colorset <- c("NA" = '#660033',
+                   "Blue" = 'blue',
+                   "Pink" = 'pink',
+                   "Yellow" = 'yellow',
+                   "Green" = 'green',
+                   "Red" = 'red',
+                   "Grey" = 'grey',
+                   "Black" = 'black',
+                   "Orange" = 'orange',
+                   "Purple" = 'purple',
+                   "White" = 'white',
+                   "Dark Brown" = '#331a00',
+                   "Light Brown" = '#996633',
+                   "Turquoise" = '#66ffcc',
+                   "Lilac" = '#cc99ff',
+                   "Light Pink" = '#ffccdd' )
+
+
+Sunburst <- plot_ly(
+  labels = c("NA", "Blue", "Pink", "Yellow", "Green", "Red", "Grey", "Black", "Orange", "Purple", "White", "Dark Brown", "Light Brown", "Turquoise", "Lilac", "Light Pink"),
+  parents = c("", "", "Blue", "Blue", "Yellow", "Yellow", "Blue", "Blue", "Black", "Blue", "Grey", "Purple", "Purple", "Pink", "Pink", "Pink"),
+  values = c(23 ,65, 37, 12, 10, 2, 6, 6, 6, 4, 6, 1,3, 23, 9, 5),
+  type = 'sunburst',
+  branchvalues = 'total',
+  marker = list(colors = colorset)
 )
 ```
 
 ```{r}
-sunburst #This is an exemple of a sunburst plot 
+Sunburst #This is an exemple of a sunburst plot 
 ```
 Parasite of ruminants cause diseases of major socio-economic importance worldwide.The Gastrointestinal Nematodes (GIN), are currently the most important disease problem of sheep worldwide causing reductionin meat, milk, and fibre production. GIN are rapidly becoming more and more resistant to all the different anthelmintic drug treatments, which is why analysing parasitic GIN community structure is essential for diagnostics, surveillance and research. 
 
@@ -280,6 +302,15 @@ Sb1 ##To visualize our sunburst plot
 ## Variables To Be Changed 
 
 ***
+
+## Example
+
+
+***
+
+
+
+
 
 ## Links 
 
