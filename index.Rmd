@@ -16,12 +16,14 @@ output:
 
 <style>
 body {
-text-align: justify}
+text-align: justify;
+word-wrap: break-word}
 </style>
 
 #  {.tabset .tabset-fade}
 
 ## Introduction 
+
 
 ```{r include=FALSE}
 library(ggplot2)
@@ -70,6 +72,7 @@ IdTaxa is a taxonomic classification tool to classify rRNA or ITS sequences. ASV
 
 **Sunburst plot** (exemple above) is a tool to enable visualisation of hierarchal data spanning outward radially from root to leaves. In this tutorial we will use this tool to visualize the **Taxonomic classification** of the gastrointestinal nematodes found in our samples, using the Nemabiome sequencing data.
 
+**The Walkthrough is using as an example a dataset of 10 deer samples**
 
 ## Walkthrough {.tabset .tabset-fade}
 
@@ -165,8 +168,9 @@ If you need to add new species, you can add another line as such: "genus_species
 ```{r}
 ## This first colour object will be later on used in the aesthetic for the stackbar plot
 
-manualcolorSb <- c("Strongylida" = 'pink',
+manualcolorSb <- c(
                    "NA" = 'black',
+                   "Strongylida" = 'pink',
                    "Haemonchidae" = 'palevioletred',
                    "Chabertiidae" = '#ef8a62',
                    "Molineidae" = 'lightcoral',
@@ -249,6 +253,11 @@ plot_ly(Sunburst_Dataset,
 ```
 ***
 
+### Sunburst Table
+
+
+
+***
 ### Sunburst Plot
 Creating this sunburst will allow to more easily understand the taxonomic relationship between the different gastrointestinal species population found within our samples.
 
@@ -278,14 +287,14 @@ New_Data %>% replace_na(list(x = 0, y = "NA"))
 This is the last step in rearranging our new data frame. We now have our data in two column, one for the taxonomy classification and one for the number of reads allocated to each level of the taxonomy classification. The last step is to arrange the data in the custom order needed for the organisation of the sunburst plot. To do so, we will use the custom function "Function_Arrange" create above. 
 
 ```{r, attr.source='.numberLines'}
-New_Data_Arrange <- Function_Arrange(New_Data, New_Data$Taxonomy_Value ,c("Strongylida", "NA", "Haemonchidae", "Chabertiidae", "Molineidae", "Spiculopteragia", "Ostertagia", "Haemonchus", "Oesophagostomum", "Nematodirus", "Spiculopteragia_boehmi", "unclassified_Spiculopteragia", "unclassified_Ostertagia", "Haemonchus_placei", "unclassified_Haemonchus", "Oesophagostomum_venulosum", "Nematodirus_belvetianus"))
+New_Data_Arrange <- Function_Arrange(New_Data, New_Data$Taxonomy_Value ,c("NA", "Strongylida", "Haemonchidae", "Chabertiidae", "Molineidae", "Spiculopteragia", "Ostertagia", "Haemonchus", "Oesophagostomum", "Nematodirus", "Spiculopteragia_boehmi", "unclassified_Spiculopteragia", "unclassified_Ostertagia", "Haemonchus_placei", "unclassified_Haemonchus", "Oesophagostomum_venulosum", "Nematodirus_belvetianus"))
 ```
 
 Using the custom function "Function_DataFrame_Sb" created above, we assign the ids, labels, parents and size to our sunburst plot. 
  
 ```{r, attr.source='.numberLines'}
 DF_Sb1 <- Function_DataFrame_Sb(c(New_Data_Arrange$Taxonomy_Value),
-          c("Strongylida", "NA", "Haemonchidae",  "Chabertiidae", "Molineidae", "Spiculopteragia", "Ostertagia", "Haemonchus", "Oesophagostomum", "Nematodirus", "Spiculopteragia<br>boehmi", "unclassified<br>Spiculopteragia", "unclassified<br>Ostertagia", "Haemonchus<br>placei", "unclassified<br>Haemonchus", "Oesophagostomum<br>venulosum", "Nematodirus<br>belvetianus"),
+          c("NA", "Strongylida", "Haemonchidae",  "Chabertiidae", "Molineidae", "Spiculopteragia", "Ostertagia", "Haemonchus", "Oesophagostomum", "Nematodirus", "Spiculopteragia<br>boehmi", "unclassified<br>Spiculopteragia", "unclassified<br>Ostertagia", "Haemonchus<br>placei", "unclassified<br>Haemonchus", "Oesophagostomum<br>venulosum", "Nematodirus<br>belvetianus"),
           c("","", "Strongylida","Strongylida","Strongylida", "Haemonchidae", "Haemonchidae", "Haemonchidae","Chabertiidae", "Molineidae", "Spiculopteragia", "Spiculopteragia", "Ostertagia", "Haemonchus", "Haemonchus","Oesophagostomum", "Nematodirus"),
           New_Data_Arrange$Total)
 ```
@@ -301,6 +310,57 @@ Sb1 ##To visualize our sunburst plot
 
 ## Variables To Be Changed 
 
+!The **bold** part are to be changed in your code (TO CHANGE)!
+
+***
+***
+
+* My_Data: You will need to change the directory to where your **FinalSummary.xlsx** excel file obtained after running the Nemabiome pipeline
+
+```  {}
+  My_Data <- read.xlsx(TO CHANGE, sheet = "IdTaxa60Classification") 
+```
+
+***
+***
+
+* New_Data: You will need to change the first function variable with your **fasta.gz column of interest**. 
+
+```{}
+  New_Data <- Function_Gather(TO CHANGE, My_Data)
+```
+
+***
+***
+
+* You will need to change the **row number** to the number where the **NA row** is in you data
+
+```{}
+  New_Data[TO CHANGE,1]="NA"
+```
+
+***
+***
+
+* New_Data_Arrange: You will need to change the **last function variable** with the Classification name in the taxomic order of choice as seen in the **"Sunburst table" tab** of the walkthrough. 
+
+```{}
+  New_Data_Arrange <- Function_Arrange(New_Data, New_Data$Taxonomy_Value ,c(TO CHANGE)
+```
+
+***
+***
+
+* DF_Sb1: You will have to change the **second and third function variable** with the correct 1. label and 2. parent order according to the classifiction chosen (should match the label and parent order from your **"Sunburst table"**)
+
+```{}
+DF_Sb1 <- Function_DataFrame_Sb(c(New_Data_Arrange&Taxonomy_Value),
+          c(TO CHANGE),
+          c(TO CHANGE),
+          New_Data_Arrange$Total)
+```
+
+***
 ***
 
 ## Example
