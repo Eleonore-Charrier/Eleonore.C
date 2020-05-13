@@ -168,26 +168,23 @@ If you need to add new species, you can add another line as such: "genus_species
 ```{r}
 ## This first colour object will be later on used in the aesthetic for the stackbar plot
 
-manualcolorSb <- c(
-                   "NA" = 'black',
-                   "Strongylida" = 'pink',
-                   "Haemonchidae" = 'palevioletred',
-                   "Chabertiidae" = '#ef8a62',
-                   "Molineidae" = 'lightcoral',
-                   "Spiculopteragia" =  '#a86c80',
-                   "Ostertagia" = '#a33358',
-                   "Haemonchus" = '#a85470',
-                   "Oesophagostomum" = '#fc8d62',
-                   "Nematodirus" ='#fbb4ae',
-                   "Spiculopteragia_boehmi" = '#825564',
-                   "unclassified_Spiculopteragia" = '#80666e',
-                   "unclassified_Ostertagia" = '#c23e6a',
-                   "Haemonchus_placei" = '#e9a3c9',
-                   "unclassified_Haemonchus" = '#d47f9b',
-                   "Oesophagostomum_venulosum" = '#d8b365',
-                   "Nematodirus_belvetianus" = '#ef8a62'
-                   )
-
+manualcolorSb <- c("NA" = 'black',
+                    "Strongylida"= '#800000',
+                    "Haemonchidae" = '#b30000',
+                    "Chabertiidae" = '#ff6600',
+                    "Molineidae" = '#ffcc00',
+                    "Spiculopteragia" = '#ff1a1a',
+                    "Ostertagia" = '#ff4d4d',
+                    "Haemonchus" = '#ff8080',
+                    "Oesophagostomum" = '#ff944d',
+                    "Nematodirus" = '#ffe680',
+                    "Spiculopteragia_boehmi" = '#ff8566', 
+                    "unclassified_Spiculopteragia" = '#ff3333',
+                    "unclassified_Ostertagia" = '#ffcccc',
+                    "Haemonchus_placei" = '#ffe6e6',
+                    "unclassified_Haemonchus" = '#ffccff',
+                    "Oesophagostomum_venulosum" = '#ffc299',
+                    "Nematodirus_belvetianus" = '#fff5cc') 
 ```
 ***
 
