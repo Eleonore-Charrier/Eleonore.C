@@ -2,16 +2,10 @@
 output:
   html_document:
     theme: united
-    toc: true
-    toc_depth: 2
-    toc_float:
-      collapsed: false
-      smooth_scroll: false
-      number_sections: true
 ---
 
 <head>
-<b style="font-size:300%;">OPERATING PROCEDURE R: SUNBURST PLOT </b>
+<font color="#800000" size="+5">OPERATING PROCEDURE R: SUNBURST PLOT</font>
 </head>
 
 <style>
@@ -20,9 +14,10 @@ text-align: justify;
 word-wrap: break-word}
 </style>
 
+
 #  {.tabset .tabset-fade}
 
-## Introduction 
+## <font color="#cc0000">Introduction</font>
 
 
 ```{r include=FALSE}
@@ -50,7 +45,6 @@ colorset <- c("NA" = '#660033',
                    "Lilac" = '#cc99ff',
                    "Light Pink" = '#ffccdd' )
 
-
 Sunburst <- plot_ly(
   labels = c("NA", "Blue", "Pink", "Yellow", "Green", "Red", "Grey", "Black", "Orange", "Purple", "White", "Dark Brown", "Light Brown", "Turquoise", "Lilac", "Light Pink"),
   parents = c("", "", "Blue", "Blue", "Yellow", "Yellow", "Blue", "Blue", "Black", "Blue", "Grey", "Purple", "Purple", "Pink", "Pink", "Pink"),
@@ -74,9 +68,9 @@ IdTaxa is a taxonomic classification tool to classify rRNA or ITS sequences. ASV
 
 **The Walkthrough is using as an example a dataset of 10 deer samples**
 
-## Walkthrough {.tabset .tabset-fade}
+## <font color="#cc0000">Walkthrough</font> {.tabset .tabset-fade}
 
-### Files Needed
+### <font color="#ff6666">Files Needed</font>
 
 Ensure you know where all the following files are located on your computer (file directories):
 
@@ -84,7 +78,7 @@ You will need the **FinalSummary.xlsx** excel file obtained after running the Ne
 
 ***
 
-### Packages
+### <font color="#ff6666">Packages</font>
 
 
 The first step is to install the following packages. These packages are available in the **Comprehensive R Archive Network (CRAN)** repository and can be installed via install.packages(). By default, the latest version available will be installed.
@@ -144,7 +138,7 @@ library(stringr)
 
 ***
 
-### Setting Path to Samples
+### <font color="#ff6666">Setting Path to Samples</font>
 
 Here, you are telling R where your samples are located. This **directory will need to be changed** depending on where your samples are on the server/locally. The **Variables to be Changed tab** contains all directory changes in a more concise manner.
 
@@ -156,7 +150,7 @@ My_Data <- read.xlsx("/Users/eleonorecharrier/Desktop/CODE/Summary.xlsx", sheet 
 ``` 
 ***
 
-### Colors
+### <font color="#ff6666">Colors</font>
 
 This step allows to format species colour into an object which can be reuse later on for graph aesthetic purposes. 
 
@@ -188,7 +182,7 @@ manualcolorSb <- c("NA" = 'black',
 ```
 ***
 
-### Functions
+### <font color="#ff6666">Functions</font>
 
 This step will allow the creation of custom functions which will be later of use for the construction of sunburst plot. We are creating these custom functions as a way to simplify our code as well as a way to make it more understandable. Those custom functions will also allow the user to have a code frame where only their data input will be changed. This will make the code more stable and reliable. 
 
@@ -250,7 +244,7 @@ plot_ly(Sunburst_Dataset,
 ```
 ***
 
-### Sunburst Table
+### <font color="#ff6666">Sunburst Table</font>
 
 This table is an example of the table created to understand the order of the sunburst more easily. This table is based on our example with 10 deer samples. **This table will vary with each set of data**. 
 
@@ -260,7 +254,7 @@ This table is an example of the table created to understand the order of the sun
 
 
 ***
-### Sunburst Plot
+### <font color="#ff6666">Sunburst Plot</font>
 Creating this sunburst will allow to more easily understand the taxonomic relationship between the different gastrointestinal species population found within our samples.
 
 First, we need to use the `read.xlsx()` function to read specifically the IdTaxa60Classification sheet in the sequencing excel spreadsheet results. We will use the IdTaxa 60 classification results as it represents a confidence threshold of 60% which is higher than the IdTaxa 30 classification results, thus more robust. We also look at its structure to understand and look if changes need to be made. 
@@ -310,7 +304,7 @@ Sb1 ##To visualize our sunburst plot
 
 ***
 
-## Variables To Be Changed 
+## <font color="#cc0000">Variables To Be Changed</font>
 
 !The **bold** part are to be changed in your code (TO CHANGE)!
 
@@ -365,7 +359,7 @@ DF_Sb1 <- Function_DataFrame_Sb(c(New_Data_Arrange&Taxonomy_Value),
 ***
 ***
 
-## Example
+## <font color="#cc0000">Example</font>
 
 
 ***
@@ -374,7 +368,7 @@ DF_Sb1 <- Function_DataFrame_Sb(c(New_Data_Arrange&Taxonomy_Value),
 
 
 
-## Links 
+## <font color="#cc0000">Links</font>
 
 **LINK TO THE DROPBOX FOLDER CONTAINING ALL RELEVANT FILES** 
 
@@ -403,5 +397,3 @@ https://www.dropbox.com/sh/d19n2j1h27xvlqn/AACl14bR-wm5MPtU5XQ54luta?dl=0
 . Plotly: https://www.rdocumentation.org/packages/plotly/versions/4.9.2/topics/plot_ly 
 
 . Sunburst: https://plotly.com/r/sunburst-charts/
-
-
