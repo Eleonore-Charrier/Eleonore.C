@@ -247,30 +247,32 @@ plot_ly(Sunburst_Dataset,
 
 This table is an example of how to create the table to understand the order of the sunburst more easily. This table is based on the 10 deer samples example. This table will help when allocating the parents and labels into the sunburst plot. **This table will vary with each set of data**. 
 
+<p>
 <center>
 ![Step 1](/Users/eleonorecharrier/Dropbox (Gilleard Lab)/Eleonores work/Coding_projects/Eleonore/S1.png)
 </center>
+</p>
 
 
+<p>
 <center>
 ![Step 2](/Users/eleonorecharrier/Dropbox (Gilleard Lab)/Eleonores work/Coding_projects/Eleonore/S2.png)
 </center>
+</p>
 
 
+<p>
 <center>
-![Step 3](/Users/eleonorecharrier/Dropbox (Gilleard Lab)/Eleonores work/Coding_projects/Eleonore/S3.png)
+**Final Table:**
 </center>
+</p>
 
-
+<p>
 <center>
-Step 10: 
-![Step 10](/Users/eleonorecharrier/Dropbox (Gilleard Lab)/Eleonores work/Coding_projects/Eleonore/Steps/Step10.png)
-</center>
-
-<center>
-Final Table:
 ![Sunburst Classification Table.](/Users/eleonorecharrier/Dropbox (Gilleard Lab)/Eleonores work/Coding_projects/Eleonore/Sunburst_Table.png)
 </center>
+</p>
+
 ***
 ### <font color="#ff6666">Sunburst Plot</font>
 Creating this sunburst will allow for a better understanding of the taxonomic relationship between the different gastrointestinal species population found within the  samples.
