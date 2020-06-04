@@ -145,7 +145,7 @@ Here, you are telling R where your samples are located. This **directory will ne
 **Setting Path to Samples**:  R needs to know where your samples are
 
 ```{r}
-My_Data <- read.xlsx("/Users/eleonorecharrier/Desktop/CODE/Summary.xlsx", sheet = "IdTaxa60Classification")  
+My_Data <- read.xlsx("/Users/eleonorecharrier/Dropbox (Gilleard Lab)/Eleonores work/Coding_projects/Eleonore/Summary.xlsx", sheet = "IdTaxa60Classification")  
 ``` 
 ***
 
@@ -245,13 +245,32 @@ plot_ly(Sunburst_Dataset,
 
 ### <font color="#ff6666">Sunburst Table</font>
 
-This table is an example of the table created to understand the order of the sunburst more easily. This table is based on the 10 deer samples example. **This table will vary with each set of data**. 
+This table is an example of how to create the table to understand the order of the sunburst more easily. This table is based on the 10 deer samples example. This table will help when allocating the parents and labels into the sunburst plot. **This table will vary with each set of data**. 
 
 <center>
-![Sunburst Classification Table.](/Users/eleonorecharrier/Dropbox (Gilleard Lab)/Eleonores work/Coding_projects/Eleonore/Sunburst_Table.png)
+![Step 1](/Users/eleonorecharrier/Dropbox (Gilleard Lab)/Eleonores work/Coding_projects/Eleonore/S1.png)
 </center>
 
 
+<center>
+![Step 2](/Users/eleonorecharrier/Dropbox (Gilleard Lab)/Eleonores work/Coding_projects/Eleonore/S2.png)
+</center>
+
+
+<center>
+![Step 3](/Users/eleonorecharrier/Dropbox (Gilleard Lab)/Eleonores work/Coding_projects/Eleonore/S3.png)
+</center>
+
+
+<center>
+Step 10: 
+![Step 10](/Users/eleonorecharrier/Dropbox (Gilleard Lab)/Eleonores work/Coding_projects/Eleonore/Steps/Step10.png)
+</center>
+
+<center>
+Final Table:
+![Sunburst Classification Table.](/Users/eleonorecharrier/Dropbox (Gilleard Lab)/Eleonores work/Coding_projects/Eleonore/Sunburst_Table.png)
+</center>
 ***
 ### <font color="#ff6666">Sunburst Plot</font>
 Creating this sunburst will allow for a better understanding of the taxonomic relationship between the different gastrointestinal species population found within the  samples.
@@ -259,7 +278,7 @@ Creating this sunburst will allow for a better understanding of the taxonomic re
 First, the `read.xlsx()` function is used to read specifically the IdTaxa60Classification sheet in the sequencing excel spreadsheet results. The IdTaxa 60 classification results is used as it represents a confidence threshold of 60% which is higher than the IdTaxa 30 classification results, thus more robust.Its structure is looked at to understand and look if changes need to be made. 
 
 ```{r, attr.source='.numberLines'}
-My_Data <- read.xlsx("/Users/eleonorecharrier/Desktop/CODE/Summary.xlsx", sheet = "IdTaxa60Classification")  #!!The first object of this function needs to be changed to wherever the `FinalSummary.xlxs` file is in your working directory
+My_Data <- read.xlsx("/Users/eleonorecharrier/Dropbox (Gilleard Lab)/Eleonores work/Coding_projects/Eleonore/Summary.xlsx", sheet = "IdTaxa60Classification")  #!!The first object of this function needs to be changed to wherever the `FinalSummary.xlxs` file is in your working directory
 ```
 
 After looking at the structure of our data frame "My_Data", a new data frame, containing only the column which will be of our interest in the creation of the Sunburst plot, is created.
